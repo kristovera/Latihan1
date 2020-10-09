@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.text.BreakIterator;
+import com.example.latihan1.Pertemuan3.ListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +23,13 @@ public class MainActivity extends AppCompatActivity {
         Button myBtn = (Button) findViewById(R.id.button1);
         final EditText myEditText = (EditText) findViewById(R.id.editText1);
         Button btnHelp = (Button) findViewById((R.id.button3));
+
+        //pertemuan2
+        Button btnList = (Button)(findViewById(R.id.buttonListView));
+        Button btnRecycler = (Button)(findViewById(R.id.buttonRecycler));
+        Button btnCard  = (Button)(findViewById(R.id.buttonCard));
+
+
         //actions
         txtview.setText(R.string.text_hello_all);
         myBtn.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 b.putString("help_string", myEditText.getText().toString());
                 intent.putExtras(b);
 
+                startActivity(intent);
+            }
+        });
+        btnList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
                 startActivity(intent);
             }
         });

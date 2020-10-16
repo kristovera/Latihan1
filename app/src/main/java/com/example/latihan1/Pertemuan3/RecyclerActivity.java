@@ -1,6 +1,8 @@
 package com.example.latihan1.Pertemuan3;
 
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,24 +16,26 @@ import com.example.latihan1.Adapter.MahasiswaRecyclerAdapter;
 import com.example.latihan1.Model.Mahasiswa;
 import com.example.latihan1.R;
 
-class RecyclerActivity extends AppCompatActivity {
+public class RecyclerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.activity_recycler2);
 
         RecyclerView rv = (RecyclerView)findViewById(R.id.rvLatihan);
         MahasiswaRecyclerAdapter mahasiswaRecyclerAdapter;
         List<Mahasiswa> mahasiswaList = new ArrayList<Mahasiswa>();
 
-        Mahasiswa m1 = new Mahasiswa("Baba","11802001","08902415780");
-        Mahasiswa m2 = new Mahasiswa("Mike","72140001","0878219020304");
-
+        Mahasiswa m1 = new Mahasiswa("Supri", "721800001", "0823456778100");
+        Mahasiswa m2 = new Mahasiswa("Evan", "72180190", "08142567103081");
+        Mahasiswa m3 = new Mahasiswa("Budi", "72180188", "0813456281900");
 
         mahasiswaList.add(m1);
         mahasiswaList.add(m2);
+        mahasiswaList.add(m3);
 
+        List<Mahasiswa> mahasiswaListDebug = new ArrayList<Mahasiswa>();
 
         mahasiswaRecyclerAdapter = new MahasiswaRecyclerAdapter(RecyclerActivity.this);
         mahasiswaRecyclerAdapter.setMahasiswaList(mahasiswaList);

@@ -15,15 +15,17 @@ import java.util.List;
 import com.example.latihan1.Model.Mahasiswa;
 import com.example.latihan1.R;
 
-public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecyclerAdapter.ViewHolder> {
-
+public class MahasiswaCardAdapter extends RecyclerView.Adapter<MahasiswaCardAdapter.ViewHolder> {
     private Context context;
-
     private List<Mahasiswa> mahasiswaList;
 
-    public MahasiswaRecyclerAdapter(Context context) {
+    public MahasiswaCardAdapter(Context context) {
         this.context = context;
         mahasiswaList = new ArrayList<>();
+    }
+
+    public List<Mahasiswa> getMahasiswaList() {
+        return mahasiswaList;
     }
 
     public void setMahasiswaList(List<Mahasiswa> mahasiswaList) {
@@ -31,26 +33,21 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
         notifyDataSetChanged();
     }
 
-    public List<Mahasiswa> getMahasiswaList() {
-        return mahasiswaList;
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_list_recycler, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_list_cardview, parent, false);
         return new ViewHolder(v);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Mahasiswa m = mahasiswaList.get(position);
-        holder.tvNama.setText(m.getNama());
-        holder.tvNim.setText(m.getNim());
-        holder.tvNoTelepon.setText(m.getNotelp());
-    }
 
+        holder.txtNama.setText(m.getNama());
+        holder.txtNim.setText(m.getNim());
+        holder.txtNoTelp.setText(m.getNotelp());
+    }
 
     @Override
     public int getItemCount() {
@@ -58,17 +55,14 @@ public class MahasiswaRecyclerAdapter extends RecyclerView.Adapter<MahasiswaRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvNama, tvNim, tvNoTelepon;
+        private TextView txtNama, txtNim, txtNoTelp;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvNama = itemView.findViewById((R.id.txtNama));
-            tvNim = itemView.findViewById(R.id.tvNim);
-            tvNoTelepon = itemView.findViewById(R.id.tvNoTelp);
+            txtNama = itemView.findViewById(R.id.txtNama);
+            txtNim = itemView.findViewById(R.id.tvNim);
+            txtNoTelp = itemView.findViewById(R.id.tvNoTelp);
         }
     }
 }
-
-
-
 

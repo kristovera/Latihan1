@@ -12,17 +12,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Crud.HapusMhsActivity"></activity>
-        <activity android:name=".Crud.MahasiswaAddActivity" />
-        <activity android:name=".Crud.MahasiswaGetAllActivity" />
-        <activity android:name=".Crud.MainMhsActivity">
+        <activity android:name=".CrudMatkul.MatkulAddActivity"></activity>
+        <activity android:name=".CrudMatkul.MatkulUpdateActivity" />
+        <activity android:name=".CrudMatkul.HapusMatkulActivity" />
+        <activity android:name=".CrudMatkul.MatkulGetAllActivity" />
+        <activity android:name=".CrudMatkul.MainMatkulActivity" />
+        <activity android:name=".CrudDsn.HapusDsnActivity" />
+        <activity android:name=".CrudDsn.DosenUpdateActivity" />
+        <activity android:name=".CrudDsn.DosenGetAllActivity" />
+        <activity android:name=".CrudDsn.DosenAddActivity" />
+        <activity android:name=".CrudDsn.MainDsnActivity" />
+        <activity android:name=".HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".Pertemuan6.SplashActivity" >
+
+        </activity>
+        <activity android:name=".Pertemuan6.LoginActivity" >
+
+        </activity>
+        <activity android:name=".Pertemuan6.PrefActivity"/>
+        <activity android:name=".Crud.MahasiswaAddActivity" />
+        <activity android:name=".Crud.MahasiswaUpdateActivity" />
+        <activity android:name=".Pertemuan4.DebuggingActivity" />
         <activity android:name=".Pertemuan3.RecyclerActivity" />
+        <activity android:name=".Pertemuan3.CardViewTestActivity" />
+        <activity android:name=".TrackerActivity" />
+        <activity android:name=".Crud.HapusMhsActivity" />
+        <activity android:name=".Crud.MahasiswaGetAllActivity" />
+        <activity android:name=".Crud.MainMhsActivity" />
         <activity android:name=".Pertemuan3.ListActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".MainActivity" />

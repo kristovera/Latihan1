@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvMahasiswa"
+        android:id="@+id/cvDosen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -15,8 +15,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/txtNama"
@@ -28,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtNim"
+                android:id="@+id/txtNidn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -42,9 +41,8 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNim" />
+                app:layout_constraintTop_toBottomOf="@+id/txtNidn" />
 
             <TextView
                 android:id="@+id/txtEmail"
@@ -56,7 +54,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtAlamat" />
 
             <TextView
-                android:id="@+id/txtNoTelp"
+                android:id="@+id/txtGelar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="TextView"

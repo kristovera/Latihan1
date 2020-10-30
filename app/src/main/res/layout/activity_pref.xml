@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pertemuan3.RecyclerActivity">
+    tools:context=".Pertemuan6.PrefActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLatihan"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+    <Button
+        android:id="@+id/btnPref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

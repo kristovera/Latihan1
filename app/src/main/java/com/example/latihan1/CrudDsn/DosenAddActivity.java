@@ -1,4 +1,6 @@
-package com.example.latihan1.Crud;
+package com.example.latihan1.CrudDsn;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -7,32 +9,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.latihan1.Model.DefaultResult;
-import com.example.latihan1.Network.GetDataService;
-import com.example.latihan1.Network.RetrofitClientInstance;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.example.latihan1.Crud.MahasiswaAddActivity;
+import com.example.latihan1.Model.DefaultResult;
+import com.example.latihan1.Network.GetDataService;
+import com.example.latihan1.Network.RetrofitClientInstance;
 import com.example.latihan1.R;
 
-public class MahasiswaAddActivity extends AppCompatActivity {
+public class DosenAddActivity extends AppCompatActivity {
     ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mahasiswa_add2);
+        setContentView(R.layout.activity_dosen_add);
 
         //variabel
-        final EditText edNama = (EditText)findViewById(R.id.editTextNama);
-        final EditText edNim = (EditText)findViewById(R.id.editTextNim);
-        final EditText edAlamat = (EditText)findViewById(R.id.editTextAlamat);
-        final EditText edEmail = (EditText)findViewById(R.id.editTextEmail);
-        Button btnSimpan = (Button)findViewById(R.id.buttonSimpanMhs);
-        pd = new ProgressDialog(MahasiswaAddActivity.this);
+        final EditText edNama = (EditText)findViewById(R.id.editTextNamaDosen);
+        final EditText edNidn = (EditText)findViewById(R.id.editTextNidn);
+        final EditText edAlamat = (EditText)findViewById(R.id.editTextAlamatDosen);
+        final EditText edEmail = (EditText)findViewById(R.id.editTextEmailDosen);
+        final EditText edGelar = (EditText)findViewById(R.id.editTextGelar);
+        Button btnSimpan = (Button)findViewById(R.id.buttonSimpanDsn);
+        pd = new ProgressDialog(DosenAddActivity.this);
 
         //action
         btnSimpan.setOnClickListener(new View.OnClickListener() {
@@ -42,26 +43,27 @@ public class MahasiswaAddActivity extends AppCompatActivity {
                 pd.show();
 
                 GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-                Call<DefaultResult> call = service.add_mhs(
+                Call<DefaultResult> call = service.add_dsn(
                         edNama.getText().toString(),
-                        edNim.getText().toString(),
+                        edNidn.getText().toString(),
                         edAlamat.getText().toString(),
                         edEmail.getText().toString(),
-                        "kosongkan saja diisi sembarang karena dirandom sistem",
-                        "72180203" //diisi nim masing-masing
+                        edGelar.getText().toString(),
+                        "Isi Secara Random",
+                        "72180211" //diisi nim masing-masing
                 );
 
                 call.enqueue(new Callback<DefaultResult>() {
                     @Override
                     public void onResponse(Call<DefaultResult> call, Response<DefaultResult> response) {
                         pd.dismiss();
-                        Toast.makeText(MahasiswaAddActivity.this,"DATA BERHASIL DISIMPAN",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DosenAddActivity.this,"DATA BERHASIL DISIMPAN",Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onFailure(Call<DefaultResult> call, Throwable t) {
                         pd.dismiss();
-                        Toast.makeText(MahasiswaAddActivity.this,"DATA TIDAK DAPAT DISIMPAN",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DosenAddActivity.this,"DATA EROR",Toast.LENGTH_LONG).show();
                     }
                 });
             }

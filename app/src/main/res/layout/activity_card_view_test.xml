@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Crud.MahasiswaGetAllActivity">
+    tools:context=".Pertemuan3.RecyclerActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGetMhsAll"
-        android:layout_width="363dp"
-        android:layout_height="660dp"
+        android:id="@+id/rvLatihan"
+        android:layout_width="372dp"
+        android:layout_height="649dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

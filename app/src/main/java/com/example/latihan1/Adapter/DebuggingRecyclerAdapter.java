@@ -1,5 +1,6 @@
 package com.example.latihan1.Adapter;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,50 +10,52 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.latihan1.Model.Mahasiswa;
+import com.example.latihan1.Model.MahasiswaDebugging;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.example.latihan1.R;
 
-public class MahasiswaCardAdapter extends RecyclerView.Adapter<MahasiswaCardAdapter.ViewHolder> {
+
+
+public class DebuggingRecyclerAdapter extends RecyclerView.Adapter<DebuggingRecyclerAdapter.ViewHolder> {
     private Context context;
-    private List<Mahasiswa> mahasiswaList;
+    private List<MahasiswaDebugging> mahasiswaListDebug;
 
-    public MahasiswaCardAdapter(Context context) {
+    public DebuggingRecyclerAdapter(Context context) {
         this.context = context;
-        mahasiswaList = new ArrayList<>();
+        mahasiswaListDebug = new ArrayList<>();
     }
 
-    public List<Mahasiswa> getMahasiswaList() {
-        return mahasiswaList;
+    public List<MahasiswaDebugging> getMahasiswaList() {
+        return mahasiswaListDebug;
     }
 
-    public void setMahasiswaList(List<Mahasiswa> mahasiswaList) {
-        this.mahasiswaList = mahasiswaList;
+    public void setMahasiswaListDebug(List<MahasiswaDebugging> mahasiswaListDebug) {
+        this.mahasiswaListDebug = mahasiswaListDebug;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_list_cardview, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_list_debugging,parent,false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Mahasiswa m = mahasiswaList.get(position);
+        MahasiswaDebugging m = mahasiswaListDebug.get(position);
 
         holder.txtNama.setText(m.getNama());
-        holder.txtNim.setText(m.getNim());
         holder.txtNoTelp.setText(m.getNotelp());
+        holder.txtNim.setText(m.getNim());
     }
 
     @Override
     public int getItemCount() {
-        return mahasiswaList.size();
+        return mahasiswaListDebug.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

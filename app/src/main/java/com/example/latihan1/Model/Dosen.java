@@ -3,7 +3,7 @@ package com.example.latihan1.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Mahasiswa {
+public class Dosen {
     @SerializedName("id")
     @Expose
     private String id;
@@ -12,13 +12,9 @@ public class Mahasiswa {
     @Expose
     private String nama;
 
-    @SerializedName("nim")
+    @SerializedName("nidn")
     @Expose
-    private String nim;
-
-    @SerializedName("notelp")
-    @Expose
-    private String notelp;
+    private String nidn;
 
     @SerializedName("alamat")
     @Expose
@@ -28,20 +24,18 @@ public class Mahasiswa {
     @Expose
     private String email;
 
+    @SerializedName("gelar")
+    @Expose
+    private String gelar;
 
-    public Mahasiswa(String nama, String nim, String notelp) {
-        this.nama = nama;
-        this.nim = nim;
-        this.notelp = notelp;
-    }
 
-    public Mahasiswa(String id, String nama, String nim, String notelp, String alamat, String email) {
+    public Dosen(String id, String nama, String nidn, String alamat, String email, String gelar) {
         this.id = id;
         this.nama = nama;
-        this.nim = nim;
-        this.notelp = notelp;
+        this.nidn = nidn;
         this.alamat = alamat;
         this.email = email;
+        this.gelar = gelar;
 
     }
 
@@ -61,20 +55,12 @@ public class Mahasiswa {
         this.nama = nama;
     }
 
-    public String getNim() {
-        return nim;
+    public String getNidn() {
+        return nidn;
     }
 
-    public void setNim(String nim) {
-        this.nim = nim;
-    }
-
-    public String getNotelp() {
-        return notelp;
-    }
-
-    public void setNotelp(String notelp) {
-        this.notelp = notelp;
+    public void setNidn(String nidn) {
+        this.nidn = nidn;
     }
 
     public String getAlamat() {
@@ -91,5 +77,13 @@ public class Mahasiswa {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getGelar() {
+        return gelar;
+    }
+
+    public void setGelar(String gelar) {
+        this.gelar = gelar;
     }
 }
